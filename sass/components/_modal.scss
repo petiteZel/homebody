@@ -1,0 +1,91 @@
+$breakpoint-mobile: 767px;
+$breakpoint-pc: 767px + 1px;
+
+#ct-modal-title-btn{
+    background-color:transparent;
+    border: none;
+}
+
+
+
+@media screen and (max-width: $breakpoint-mobile) {
+
+    .modal-dialog{
+        display: flex;
+        align-items: end;
+
+        .modal-content{
+            height: 500px;
+
+            .modal-body{
+                overflow: auto;
+            
+                .ct-modal-box{
+                    color: black;
+
+                    .ct-modal-box-title{
+                        cursor: pointer;
+                        font-size: xx-large;
+    
+                    }
+                    .ct-modal-box-content{
+                        div{
+                            display: flex;
+                            flex-direction: column;
+                            a{
+                                cursor: pointer;
+                                font-size: x-large;
+                            }
+                        }
+                        display: none;
+                        border-radius: 5px;
+                        background-color: $point-background;
+                    }
+                    text-align: center;
+                    position: relative;
+                    
+                }
+            }
+            .modal-footer{
+                display: none;
+            }
+        }
+
+    }
+
+  }
+@media screen and (min-width: $breakpoint-pc) {
+    .modal-dialog{
+        max-width: 770px;
+
+        .modal-body{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: 1px;
+        
+            .ct-modal-box{
+                color: black;
+                .ct-modal-box-content{
+                    div{
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+                text-align: center;
+                position: relative;
+                
+            }
+            .ct-modal-box::after{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                height: 100%;
+                width: 1px;
+                background-color: lightgray;
+            }
+        }
+    }
+  }
+
+
